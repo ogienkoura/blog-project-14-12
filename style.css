@@ -119,6 +119,21 @@ body {
   .hidden-sm {
     display: none;
   }
+  .menu li a {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  .header__logo {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header__logo h2 {
+    display: none;
+  }
+  .team .team__person {
+    width: 100%;
+  }
 }
 
 /* laptop */
@@ -150,12 +165,27 @@ body {
             flex: 0 0 66.66667%;
     max-width: 66.66667%;
   }
+  .col-md-10 {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 83.33333%;
+            flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+  .header__logo h2 {
+    display: block;
+  }
+  .team .team__person {
+    width: 50%;
+  }
 }
 
 /* desktop */
 @media (min-width: 1200px) {
   .container {
     max-width: 1170px;
+  }
+  .menu li a {
+    font-size: 20px;
   }
 }
 
@@ -236,7 +266,9 @@ body {
 
 .slider__background-image img {
   width: 100%;
-  height: 700px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .content__header-divide-line {
@@ -279,8 +311,7 @@ body {
   color: black;
 }
 
-.news__item .lifestyle,
-.news__item .places {
+.news__item.lifestyle, .news__item.places {
   width: 50%;
 }
 
@@ -343,8 +374,10 @@ body {
 }
 
 .team__person-photo {
+  max-height: 200px;
   height: auto;
   width: 100%;
+  max-width: 140px;
 }
 
 .team__person-name {
@@ -373,19 +406,95 @@ body {
   margin-bottom: 20px;
 }
 
+.find-us {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.find-us .block {
+  width: 60px;
+  height: 60px;
+  background-color: #c8cdd0;
+  margin-left: 15px;
+  background-position-x: center;
+  background-position-y: center;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.find-us .facebook {
+  background-image: url(img/facebook_logo.png);
+}
+
+.find-us .twitter {
+  background-image: url(img/twitter_logo.png);
+}
+
+.find-us .google {
+  background-image: url(img/google_logo.png);
+}
+
+.find-us .linkedin {
+  background-image: url(img/linkedin_logo.png);
+}
+
+.find-us .behance {
+  background-image: url(img/behance_logo.png);
+}
+
+.find-us .block:hover {
+  background-color: #939799;
+}
+
 .footer {
   text-align: center;
   background-color: black;
   bottom: 0;
-  width: 100vw;
   color: white;
   padding: 20px;
+}
+
+.footer__text {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* only mobile */
 @media (max-width: 767px) {
   .hidden-xs {
     display: none;
+  }
+  .header__logo h2 {
+    display: none;
+  }
+  .team {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .team__person {
+    width: 100%;
+  }
+  .articles {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .news__item.lifestyle, .news__item.places {
+    width: 100%;
+  }
+  .find-us .block {
+    width: 50px;
+    height: 50px;
+    margin-left: 2px;
+    margin-bottom: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */

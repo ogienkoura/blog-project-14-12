@@ -103,6 +103,24 @@ body {
   .hidden-sm {
     display: none;
   }
+
+  .menu {
+    & li a {
+      font-size: 15px;
+      margin-left: 10px;
+    }
+  }
+
+  .header__logo {
+    justify-content: center;
+    & h2 {
+      display: none;
+    }
+  }
+
+  .team .team__person {
+    width: 100%;
+  }
 }
 
 /* laptop */
@@ -113,7 +131,6 @@ body {
   .col-md-2 {
     flex: 0 0 16.66667%;
     max-width: 16.66667%;
-    // display: flex;
   }
 
   .col-md-3 {
@@ -130,12 +147,32 @@ body {
     flex: 0 0 66.66667%;
     max-width: 66.66667%;
   }
+
+  .col-md-10 {
+    flex: 0 0 83.33333%;
+    max-width: 83.33333%;
+  }
+
+  .header__logo {
+    & h2 {
+      display: block;
+    }
+  }
+
+  .team .team__person {
+    width: 50%;
+  }
 }
 
 /* desktop */
 @media (min-width: 1200px) {
   .container {
     max-width: 1170px;
+  }
+  .menu {
+    & li a {
+      font-size: 20px;
+    }
   }
 }
 
@@ -197,7 +234,8 @@ body {
   height: 700px;
   & img {
     width: 100%;
-    height: 700px;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
@@ -235,8 +273,8 @@ body {
       color: black;
     }
   }
-  & .lifestyle,
-  .places {
+  &.lifestyle,
+  &.places {
     width: 50%;
   }
 }
@@ -289,8 +327,10 @@ body {
     width: 50%;
     margin-bottom: 10px;
     &-photo {
+      max-height: 200px;
       height: auto;
       width: 100%;
+      max-width: 140px;
     }
     &-name {
       font-size: 20px;
@@ -319,15 +359,52 @@ body {
   }
 }
 
+.find-us {
+  display: flex;
+  justify-content: center;
+  & .block {
+    width: 60px;
+    height: 60px;
+    background-color: #c8cdd0;
+    margin-left: 15px;
+    background-position-x: center;
+    background-position-y: center;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  & .facebook {
+    background-image: url(img/facebook_logo.png);
+  }
+  & .twitter {
+    background-image: url(img/twitter_logo.png);
+  }
+  & .google {
+    background-image: url(img/google_logo.png);
+  }
+  & .linkedin {
+    background-image: url(img/linkedin_logo.png);
+  }
+  & .behance {
+    background-image: url(img/behance_logo.png);
+  }
+}
+
+.find-us .block:hover {
+  background-color: #939799;
+}
+
 .footer {
   text-align: center;
   background-color: black;
   bottom: 0;
-  width: 100vw;
   color: white;
   padding: 20px;
 }
 
+.footer__text {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 /* only mobile */
 
 @media (max-width: 767px) {
@@ -335,11 +412,34 @@ body {
     display: none;
   }
 
-  // .lifestyle__items {
-  //   flex-wrap: wrap;
-  // }
+  .header__logo h2 {
+    display: none;
+  }
 
-  // .lifestyle__item {
-  //   width: 100%;
-  // }
+  .team {
+    flex-direction: column;
+    &__person {
+      width: 100%;
+    }
+  }
+
+  .articles {
+    flex-direction: column;
+  }
+
+  .news__item {
+    &.lifestyle,
+    &.places {
+      width: 100%;
+    }
+  }
+
+  .find-us {
+    & .block {
+      width: 50px;
+      height: 50px;
+      margin-left: 2px;
+      margin-bottom: 20px;
+    }
+  }
 }
